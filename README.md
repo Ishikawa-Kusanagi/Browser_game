@@ -53,3 +53,5 @@ Frontend: HTML, CSS, JavaScript
 CI/CD: GitHub Actions
 
 📸 Скриншоты
+
+![Выбор персонажа, распределение очков](screenshots/4.png)
