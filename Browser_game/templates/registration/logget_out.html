@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Вы вышли из аккаунта</h2>
+    <a href="{% url 'login' %}" class="btn btn-primary">Войти снова</a>
+    <a href="{% url 'signup' %}" class="btn btn-secondary">Регистрация</a>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5 text-center">
+    <h1 class="text-white">Добро пожаловать в RPG-игру!</h1>
+    <p class="text-white">Создайте своего персонажа и начните приключение!</p>
+    <a href="{% url 'signup' %}" class="btn btn-primary btn-lg">Начать игру</a>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Игра окончена! Ваш персонаж мёртв.</h2>
+    <p>Здоровье: {{ character.health }} (если нужно отобразить старого персонажа)</p>
+    <a href="{% url 'create_character' %}" class="btn btn-primary">Создать нового персонажа</a>
+    <a href="{% url 'inventory' %}" class="btn btn-secondary">Инвентарь (сохраняется)</a>
+</div>
+{% endblock %}

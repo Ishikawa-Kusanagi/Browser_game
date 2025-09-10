@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="scene-container" style="background-image: url('{% if scene.background_image %}{{ scene.background_image.url }}{% else %}{% static 'images/default_background.jpg' %}{% endif %}'); background-size: cover; min-height: 100vh; padding: 20px;">
+    <div class="container">
+        <h1 class="text-white">{{ scene.title }}</h1>
+        <p class="text-white">{{ scene.description }}</p>
+
+        <!-- Миниатюры персонажа и врага -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card bg-dark text-white">
+                    <img src="{% if character.miniature %}{{ character.miniature.url }}{% elif character.character_class.miniature %}{{ character.character_class.miniature.url }}{% else %}{% static 'images/default_character.png' %}{% endif %}" alt="{{ character.name }}" class="card-img-top" style="width: 100px; height: auto;">
+                    <div class="card-body">
+                        <h5>{{ character.name }}</h5>
+                        <p>Здоровье: {{ character.health }}</p>
+                        <p>Интеллект: {{ character.intelligence }}</p>
+                        <p>Ловкость: {{ character.dexterity }}</p>
+                        <p>Сила: {{ character.strength }}</p>
+                        {% if character.health <= 0 %}
+                            <p class="text-danger">Персонаж мёртв! Создайте нового.</p>
+                            <a href="{% url 'create_character' %}" class="btn btn-warning">Создать нового</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% if scene.enemy %}
+            <div class="col-md-6">
+                <div class="card bg-dark text-white">
+                    <img src="{% if scene.enemy.miniature %}{{ scene.enemy.miniature.url }}{% else %}{% static 'images/default_enemy.png' %}{% endif %}" alt="{{ scene.enemy.name }}" class="card-img-top" style="width: 100px; height: auto;">
+                    <div class="card-body">
+                        <h5>{{ scene.enemy.name }}</h5>
+                        <p>Здоровье: {{ scene.enemy.health }}</p>
+                        <p>Интеллект: {{ scene.enemy.intelligence }}</p>
+                        <p>Ловкость: {{ scene.enemy.dexterity }}</p>
+                        <p>Сила: {{ scene.enemy.strength }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Форма действий (только если жив) -->
+        {% if character.health > 0 %}
+        <form method="post" class="mt-3">
+            {% csrf_token %}
+            <button type="submit" name="action" value="fight" class="btn btn-danger">Драка</button>
+            <button type="submit" name="action" value="negotiate" class="btn btn-primary">Переговоры</button>
+            <button type="submit" name="action" value="flee" class="btn btn-secondary">Бежать</button>
+        </form>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
