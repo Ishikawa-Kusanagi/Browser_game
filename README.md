@@ -54,6 +54,6 @@ CI/CD: GitHub Actions
 
 📸 Скриншоты
 ![Панель создания персонажа](Browser_game/screenshots/1.png)
-![Игровой момент](Browser_game/screenshots/2.png)
+![Игровой момент](.Browser_game/screenshots/2.png)
 ![Игровой момент](Browser_game/screenshots/3.png)
 ![Панель создания персонажа](Browser_game/screenshots/4.png)
