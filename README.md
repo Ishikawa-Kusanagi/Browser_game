@@ -53,7 +53,7 @@ Frontend: HTML, CSS, JavaScript
 CI/CD: GitHub Actions
 
 📸 Скриншоты
-![Панель создания персонажа](./screenshots/1.png)
+![Панель создания персонажа]([./screenshots/1.png](https://github.com/Ishikawa-Kusanagi/Browser_game/issues/1#issue-3403341572))
 ![Игровой момент](screenshots/2.png)
 ![Игровой момент](screenshots/3.png)
 ![Панель создания персонажа](screenshots/4.png)
