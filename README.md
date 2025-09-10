@@ -52,5 +52,4 @@ Frontend: HTML, CSS, JavaScript
 
 CI/CD: GitHub Actions
 
-📸 Скриншоты
-![screen](https://github.com/Ishikawa-Kusanagi/Browser_game/blob/main/screenshots/1.png)
+
