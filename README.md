@@ -57,7 +57,7 @@ CI/CD: GitHub Actions
 ![Панель создания персонажа](screenshots/4.png)
 
 Скриншот игровых моментов  
-![Скриншот игровых моментов](screenshots/2.png)
+![Скриншот игровых моментов](Browser_game/screenshots/2.png)
 
 Скриншот игровых моментов  
 ![Скриншот игровых моментов](screenshots/3.png)
